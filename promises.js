@@ -18,9 +18,15 @@ const getTodos = (resource) => {//'callback' can be called anything
     });
     
 };
-
+//avoid callback hell
 getTodos('todos/luigi.json').then(data => {
-    console.log('promise resolved', data)
+    console.log('promise luigi resolved', data);
+    return getTodos('todos/mario.json');
+}).then(data => {
+    console.log('promise mario resolved', data);
+    return getTodos('todos/shawn.json');
+}).then(data => {
+    console.log('promise shawn resolved', data);
 }).catch(err => {
     console.log('promise rejected', err);
 })
