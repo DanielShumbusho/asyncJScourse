@@ -7,7 +7,7 @@ const request = new XMLHttpRequest(); // create a new XMLHttpRequest object
 
 request.addEventListener('readystatechange', () =>{
     //console.log(request, request.readyState); // log the current state of the request
-    if(request.readyState === 4) {
+    if(request.readyState === 4 && request.status === 200) {
         console.log(request.responseText); // log the response text when the request is complete
     }
 });
