@@ -9,8 +9,10 @@ request.addEventListener('readystatechange', () =>{
     //console.log(request, request.readyState); // log the current state of the request
     if(request.readyState === 4 && request.status === 200) {
         console.log(request.responseText); // log the response text when the request is complete
+    }else if (request.readyState === 4){
+        console.log('could not fetch data'); // log an error message if the request fails
     }
 });
 
-request.open('GET', 'https://jsonplaceholder.typicode.com/todos/'); // open a GET request to the specified URL
+request.open('GET', 'https://jsonplaceholder.typicode.com/todoss/'); // open a GET request to the specified URL
 request.send(); // send the request
