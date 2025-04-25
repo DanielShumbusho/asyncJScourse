@@ -19,7 +19,7 @@ const getTodos = (callback) => {//'callback' can be called anything
     });
 
     // request.open('GET', 'https://jsonplaceholder.typicode.com/todos/'); // open a GET request to the specified URL
-    request.open('GET', 'todos.json');//testing on local json file
+    request.open('GET', 'todos/shawn.json');//testing on local json file
     request.send(); // send the request
 }
 console.log('1')//to test the asyncronic nature of the code
