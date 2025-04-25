@@ -1,4 +1,4 @@
-const getTodos = (callback) => {//can be called anything
+const getTodos = (callback) => {//'callback' can be called anything
     //we will be doing api requests 
     //and GET back some json data
     // fetch('https://jsonplaceholder.typicode.com/todos/1')
@@ -20,6 +20,10 @@ const getTodos = (callback) => {//can be called anything
     request.open('GET', 'https://jsonplaceholder.typicode.com/todos/'); // open a GET request to the specified URL
     request.send(); // send the request
 }
+console.log('1')//to test the asyncronic nature of the code
+//the code below will run before the request is completed
+console.log('2')
+
 getTodos((err, data) =>{//We'll put the error and data received as parameters
     console.log('callback fired');
     if(err) {
@@ -28,3 +32,7 @@ getTodos((err, data) =>{//We'll put the error and data received as parameters
         console.log(data)
     }
 }); // call the function to make the request
+
+console.log('3')//this will log too before the request is completed
+//this is because the request is asynchronous and will not block the code from running
+console.log('4')
