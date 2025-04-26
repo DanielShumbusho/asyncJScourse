@@ -1,4 +1,8 @@
-
+//basically the async function can return a bunch of promises
+//and they can later be called for resolution or rejection
+//async function will always return a promise
+//and the await keyword can only be used inside an async function
+//the await keyword will pause the execution of the async function until the promise is resolved or rejected
 const getTodos = async () => {
     const response = await fetch('todos/luigi.json');
     //but in case of typo in the link the fetch doesn't reject
