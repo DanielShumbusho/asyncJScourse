@@ -1,6 +1,7 @@
 
 const getTodos = async () => {
-    const response = await fetch('todos/luigi.json');//but in case of typo the fetch doesn't reject
+    const response = await fetch('todos/luigi.json');
+    //but in case of typo in the link the fetch doesn't reject
     //instead will give a status of 404 so we will check the status
     //and explicitely throw an error using the throw method
     if (response.status !== 200){//if the response's status is not OK then
